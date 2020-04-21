@@ -9,7 +9,7 @@ spec:
     - name: url
       value: https://github.com/tektoncd/dashboard
     - name: revision
-      value: v0.5.2
+      value: v0.6.1
 ---
 apiVersion: tekton.dev/v1alpha1
 kind: PipelineResource
@@ -23,7 +23,7 @@ spec:
     - name: location
       # This value is where our folder sits, so for example
       # https://console.cloud.google.com/storage/browser/tekton-releases/dashboard
-      value: gs://tekton-releases/dashboard
+      value: gs://tekton-releases/dashboard/openshift
     - name: dir
       value: "y"
 ---
