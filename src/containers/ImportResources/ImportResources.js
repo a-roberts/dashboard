@@ -260,7 +260,8 @@ export class ImportResources extends Component {
           />
           <ServiceAccountsDropdown
             className="saDropdown"
-            helperText="The ServiceAccount that the PipelineRun applying resources will run under (must be in the install namespace of the Tekton Dashboard)"
+            helperText="The ServiceAccount that the PipelineRun applying resources will run under.
+            Ensure the ServiceAccount (and if it's a default one used when no ServiceAccount is specified), has permissions for creating PipelineRuns, PipelineResources, and any Tekton resources in the Git repository."
             id="import-service-accounts-dropdown"
             namespace={this.state.installNamespace}
             onChange={this.handleServiceAccount}

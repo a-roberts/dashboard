@@ -581,7 +581,8 @@ class CreatePipelineRun extends React.Component {
               id="create-pipelinerun--sa-dropdown"
               titleText={intl.formatMessage({
                 id: 'dashboard.createPipelineRun.serviceAccountLabel',
-                defaultMessage: 'ServiceAccount (optional)'
+                defaultMessage:
+                  "ServiceAccount (optional). Ensure the ServiceAccount (and if it's a default one used when no ServiceAccount is specified), has permissions for creating PipelineRuns and anything else your PipelineRun interacts with."
               })}
               namespace={namespace}
               selectedItem={
