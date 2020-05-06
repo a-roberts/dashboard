@@ -18,6 +18,9 @@ func NewTaskRunController(sharedTektonInformerFactory tektoninformer.SharedInfor
 		broadcaster.TaskRunCreated,
 		broadcaster.TaskRunUpdated,
 		broadcaster.TaskRunDeleted,
+<<<<<<< HEAD
 		nil,
+=======
+>>>>>>> ddd6c4f... Refactor controllers to reduce code duplication
 	)
 }

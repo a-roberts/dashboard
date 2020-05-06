@@ -18,6 +18,9 @@ func NewPipelineController(sharedTektonInformerFactory tektoninformer.SharedInfo
 		broadcaster.PipelineCreated,
 		broadcaster.PipelineUpdated,
 		broadcaster.PipelineDeleted,
+<<<<<<< HEAD
 		nil,
+=======
+>>>>>>> ddd6c4f... Refactor controllers to reduce code duplication
 	)
 }

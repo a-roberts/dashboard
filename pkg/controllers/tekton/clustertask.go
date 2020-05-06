@@ -31,6 +31,9 @@ func NewClusterTaskController(sharedTektonInformerFactory tektoninformer.SharedI
 		broadcaster.ClusterTaskCreated,
 		broadcaster.ClusterTaskUpdated,
 		broadcaster.ClusterTaskDeleted,
+<<<<<<< HEAD
 		nil,
+=======
+>>>>>>> ddd6c4f... Refactor controllers to reduce code duplication
 	)
 }

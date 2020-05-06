@@ -18,6 +18,9 @@ func NewNamespaceController(sharedK8sInformerFactory k8sinformer.SharedInformerF
 		broadcaster.NamespaceCreated,
 		broadcaster.NamespaceUpdated,
 		broadcaster.NamespaceDeleted,
+<<<<<<< HEAD
 		nil,
+=======
+>>>>>>> ddd6c4f... Refactor controllers to reduce code duplication
 	)
 }

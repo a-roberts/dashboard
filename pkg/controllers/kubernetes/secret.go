@@ -2,9 +2,14 @@ package kubernetes
 
 import (
 	"github.com/tektoncd/dashboard/pkg/broadcaster"
+<<<<<<< HEAD
 	controllerUtils "github.com/tektoncd/dashboard/pkg/controllers/utils"
 	"github.com/tektoncd/dashboard/pkg/logging"
 	"github.com/tektoncd/dashboard/pkg/utils"
+=======
+	"github.com/tektoncd/dashboard/pkg/controllers/utils"
+	"github.com/tektoncd/dashboard/pkg/logging"
+>>>>>>> ddd6c4f... Refactor controllers to reduce code duplication
 	k8sinformer "k8s.io/client-go/informers"
 )
 
@@ -13,12 +18,19 @@ import (
 func NewSecretController(sharedK8sInformerFactory k8sinformer.SharedInformerFactory) {
 	logging.Log.Debug("In NewSecretController")
 
+<<<<<<< HEAD
 	controllerUtils.NewController(
+=======
+	utils.NewController(
+>>>>>>> ddd6c4f... Refactor controllers to reduce code duplication
 		"secret",
 		sharedK8sInformerFactory.Core().V1().Secrets().Informer(),
 		broadcaster.SecretCreated,
 		broadcaster.SecretUpdated,
 		broadcaster.SecretDeleted,
+<<<<<<< HEAD
 		utils.SanitizeSecret,
+=======
+>>>>>>> ddd6c4f... Refactor controllers to reduce code duplication
 	)
 }
