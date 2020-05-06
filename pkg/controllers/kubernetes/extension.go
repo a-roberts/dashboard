@@ -3,7 +3,7 @@ package kubernetes
 import (
 	"github.com/tektoncd/dashboard/pkg/broadcaster"
 	"github.com/tektoncd/dashboard/pkg/endpoints"
-	logging "github.com/tektoncd/dashboard/pkg/logging"
+	"github.com/tektoncd/dashboard/pkg/logging"
 	"github.com/tektoncd/dashboard/pkg/router"
 	v1 "k8s.io/api/core/v1"
 	k8sinformer "k8s.io/client-go/informers"

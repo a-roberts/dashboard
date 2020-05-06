@@ -18,10 +18,11 @@ import (
 	"sync"
 )
 
-type messageType string
+type MessageType string
 
 // Reference outside of package
 const (
+<<<<<<< HEAD
 	Log                     messageType = "Log"
 	NamespaceCreated        messageType = "NamespaceCreated"
 	NamespaceDeleted        messageType = "NamespaceDeleted"
@@ -49,10 +50,43 @@ const (
 	SecretCreated           messageType = "SecretCreated"
 	SecretDeleted           messageType = "SecretDeleted"
 	SecretUpdated           messageType = "SecretUpdated"
+=======
+	Log                     MessageType = "Log"
+	NamespaceCreated        MessageType = "NamespaceCreated"
+	NamespaceUpdated        MessageType = "NamespaceUpdated"
+	NamespaceDeleted        MessageType = "NamespaceDeleted"
+	PipelineCreated         MessageType = "PipelineCreated"
+	PipelineDeleted         MessageType = "PipelineDeleted"
+	PipelineUpdated         MessageType = "PipelineUpdated"
+	ClusterTaskCreated      MessageType = "ClusterTaskCreated"
+	ClusterTaskDeleted      MessageType = "ClusterTaskDeleted"
+	ClusterTaskUpdated      MessageType = "ClusterTaskUpdated"
+	TaskCreated             MessageType = "TaskCreated"
+	TaskDeleted             MessageType = "TaskDeleted"
+	TaskUpdated             MessageType = "TaskUpdated"
+	PipelineResourceCreated MessageType = "PipelineResourceCreated"
+	PipelineResourceDeleted MessageType = "PipelineResourceDeleted"
+	PipelineResourceUpdated MessageType = "PipelineResourceUpdated"
+	PipelineRunCreated      MessageType = "PipelineRunCreated"
+	PipelineRunDeleted      MessageType = "PipelineRunDeleted"
+	PipelineRunUpdated      MessageType = "PipelineRunUpdated"
+	TaskRunCreated          MessageType = "TaskRunCreated"
+	TaskRunDeleted          MessageType = "TaskRunDeleted"
+	TaskRunUpdated          MessageType = "TaskRunUpdated"
+	ExtensionCreated        MessageType = "ExtensionCreated"
+	ExtensionUpdated        MessageType = "ExtensionUpdated"
+	ExtensionDeleted        MessageType = "ExtensionDeleted"
+	SecretCreated           MessageType = "SecretCreated"
+	SecretDeleted           MessageType = "SecretDeleted"
+	SecretUpdated           MessageType = "SecretUpdated"
+	ServiceAccountCreated   MessageType = "ServiceAccountCreated"
+	ServiceAccountDeleted   MessageType = "ServiceAccountDeleted"
+	ServiceAccountUpdated   MessageType = "ServiceAccountUpdated"
+>>>>>>> ddd6c4f... Refactor controllers to reduce code duplication
 )
 
 type SocketData struct {
-	MessageType messageType
+	MessageType MessageType
 	Payload     interface{}
 }
 

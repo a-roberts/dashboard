@@ -2,45 +2,21 @@ package tekton
 
 import (
 	"github.com/tektoncd/dashboard/pkg/broadcaster"
+<<<<<<< HEAD
 	"github.com/tektoncd/dashboard/pkg/endpoints"
+=======
+	"github.com/tektoncd/dashboard/pkg/controllers/utils"
+>>>>>>> ddd6c4f... Refactor controllers to reduce code duplication
 	logging "github.com/tektoncd/dashboard/pkg/logging"
-	v1alpha1 "github.com/tektoncd/pipeline/pkg/apis/pipeline/v1alpha1"
 	tektoninformer "github.com/tektoncd/pipeline/pkg/client/informers/externalversions"
-	"k8s.io/client-go/tools/cache"
 )
 
 // NewTaskController registers a Tekton controller/informer for tasks on
 // the sharedTektonInformerFactory
 func NewTaskController(sharedTektonInformerFactory tektoninformer.SharedInformerFactory) {
 	logging.Log.Debug("In NewTaskController")
-	taskInformer := sharedTektonInformerFactory.Tekton().V1alpha1().Tasks().Informer()
-	taskInformer.AddEventHandler(cache.ResourceEventHandlerFuncs{
-		AddFunc:    taskCreated,
-		UpdateFunc: taskUpdated,
-		DeleteFunc: taskDeleted,
-	})
-}
 
-func taskCreated(obj interface{}) {
-	logging.Log.Debugf("Task Controller detected task '%s' created", obj.(*v1alpha1.Task).Name)
-	data := broadcaster.SocketData{
-		MessageType: broadcaster.TaskCreated,
-		Payload:     obj,
-	}
-	endpoints.ResourcesChannel <- data
-}
-
-func taskUpdated(oldObj, newObj interface{}) {
-	if newObj.(*v1alpha1.Task).GetResourceVersion() != oldObj.(*v1alpha1.Task).GetResourceVersion() {
-		logging.Log.Debugf("Task Controller detected task '%s' updated", oldObj.(*v1alpha1.Task).Name)
-		data := broadcaster.SocketData{
-			MessageType: broadcaster.TaskUpdated,
-			Payload:     newObj,
-		}
-		endpoints.ResourcesChannel <- data
-	}
-}
-
+<<<<<<< HEAD
 func taskDeleted(obj interface{}) {
 	logging.Log.Debugf("Task Controller detected task '%s' deleted", obj.(*v1alpha1.Task).Name)
 	data := broadcaster.SocketData{
@@ -48,4 +24,13 @@ func taskDeleted(obj interface{}) {
 		Payload:     obj,
 	}
 	endpoints.ResourcesChannel <- data
+=======
+	utils.NewController(
+		"task",
+		sharedTektonInformerFactory.Tekton().V1alpha1().Tasks().Informer(),
+		broadcaster.TaskCreated,
+		broadcaster.TaskUpdated,
+		broadcaster.TaskDeleted,
+	)
+>>>>>>> ddd6c4f... Refactor controllers to reduce code duplication
 }
