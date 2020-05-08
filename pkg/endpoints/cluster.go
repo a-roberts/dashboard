@@ -17,6 +17,10 @@ import (
 	"errors"
 	"net/http"
 	"net/url"
+<<<<<<< HEAD
+=======
+	"os"
+>>>>>>> 410c7ca... Filter resources before returning to the client
 	"regexp"
 	"strconv"
 	"strings"

@@ -19,8 +19,12 @@ func NewTaskController(sharedTektonInformerFactory tektoninformer.SharedInformer
 		broadcaster.TaskUpdated,
 		broadcaster.TaskDeleted,
 <<<<<<< HEAD
+<<<<<<< HEAD
 		nil,
 =======
 >>>>>>> ddd6c4f... Refactor controllers to reduce code duplication
+=======
+		nil,
+>>>>>>> 410c7ca... Filter resources before returning to the client
 	)
 }

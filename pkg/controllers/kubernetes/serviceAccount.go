@@ -32,8 +32,12 @@ func NewServiceAccountController(sharedK8sInformerFactory k8sinformer.SharedInfo
 		broadcaster.ServiceAccountUpdated,
 		broadcaster.ServiceAccountDeleted,
 <<<<<<< HEAD
+<<<<<<< HEAD
 		nil,
 =======
 >>>>>>> ddd6c4f... Refactor controllers to reduce code duplication
+=======
+		nil,
+>>>>>>> 410c7ca... Filter resources before returning to the client
 	)
 }
