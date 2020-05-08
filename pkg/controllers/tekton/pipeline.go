@@ -31,6 +31,7 @@ func pipelineDeleted(obj interface{}) {
 		broadcaster.PipelineCreated,
 		broadcaster.PipelineUpdated,
 		broadcaster.PipelineDeleted,
+		nil,
 	)
 >>>>>>> ddd6c4f... Refactor controllers to reduce code duplication
 }

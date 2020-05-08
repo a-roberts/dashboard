@@ -50,5 +50,6 @@ func namespaceDeleted(obj interface{}) {
 		broadcaster.NamespaceCreated,
 		broadcaster.NamespaceUpdated,
 		broadcaster.NamespaceDeleted,
+		nil,
 	)
 }

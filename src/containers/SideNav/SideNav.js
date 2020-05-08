@@ -228,6 +228,7 @@ class SideNav extends Component {
           >
             &nbsp;
           </SideNavMenuItem>
+<<<<<<< HEAD
           <SideNavLink element={NavLink} icon={<span />} to={urls.about()}>
             {intl.formatMessage({
               id: 'dashboard.sideNav.about',
@@ -261,6 +262,43 @@ class SideNav extends Component {
           <>
             {extensions.length > 0 &&
               extensions.map(
+=======
+
+          {!this.props.isReadOnly && (
+            <SideNavMenu
+              defaultExpanded
+              title={intl.formatMessage({
+                id: 'dashboard.sideNav.kubernetesResources',
+                defaultMessage: 'Kubernetes resources'
+              })}
+            >
+              <SideNavMenuItem
+                element={NavLink}
+                icon={<span />}
+                to={this.getPath(urls.secrets.all())}
+              >
+                Secrets
+              </SideNavMenuItem>
+              <SideNavMenuItem
+                element={NavLink}
+                icon={<span />}
+                to={this.getPath(urls.serviceAccounts.all())}
+              >
+                ServiceAccounts
+              </SideNavMenuItem>
+            </SideNavMenu>
+          )}
+
+          {extensions.length > 0 && (
+            <SideNavMenu
+              defaultExpanded
+              title={intl.formatMessage({
+                id: 'dashboard.extensions.title',
+                defaultMessage: 'Extensions'
+              })}
+            >
+              {extensions.map(
+>>>>>>> 410c7ca... Filter resources before returning to the client
                 ({
                   displayName,
                   name,

@@ -31,6 +31,7 @@ func taskRunDeleted(obj interface{}) {
 		broadcaster.TaskRunCreated,
 		broadcaster.TaskRunUpdated,
 		broadcaster.TaskRunDeleted,
+		nil,
 	)
 >>>>>>> ddd6c4f... Refactor controllers to reduce code duplication
 }

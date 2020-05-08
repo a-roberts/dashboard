@@ -44,6 +44,7 @@ func clusterTaskDeleted(obj interface{}) {
 		broadcaster.ClusterTaskCreated,
 		broadcaster.ClusterTaskUpdated,
 		broadcaster.ClusterTaskDeleted,
+		nil,
 	)
 >>>>>>> ddd6c4f... Refactor controllers to reduce code duplication
 }
