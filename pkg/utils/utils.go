@@ -112,6 +112,9 @@ func SanitizeSecret(obj interface{}, skipDeletedCheck bool) interface{} {
 	}
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 36ee2da... Filter metadata before returning resource to the client
 	originalMeta := secret.ObjectMeta
 	originalAnnotations := originalMeta.Annotations
 	annotations := make(map[string]string)
@@ -131,8 +134,11 @@ func SanitizeSecret(obj interface{}, skipDeletedCheck bool) interface{} {
 		Annotations:       annotations,
 	}
 
+<<<<<<< HEAD
 =======
 >>>>>>> 410c7ca... Filter resources before returning to the client
+=======
+>>>>>>> 36ee2da... Filter metadata before returning resource to the client
 	logging.Log.Debug("Sanitizing Secret")
 	data := make(map[string][]byte)
 	if secret.Data["username"] != nil {
@@ -143,11 +149,15 @@ func SanitizeSecret(obj interface{}, skipDeletedCheck bool) interface{} {
 	}
 	return corev1.Secret{
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 36ee2da... Filter metadata before returning resource to the client
 		TypeMeta:   secret.TypeMeta, // Kind, APIVersion
 		ObjectMeta: meta,
 		Data:       data,
 		StringData: nil, // never returned over API
 		Type:       secret.Type,
+<<<<<<< HEAD
 =======
 		secret.TypeMeta,
 		secret.ObjectMeta,
@@ -155,5 +165,7 @@ func SanitizeSecret(obj interface{}, skipDeletedCheck bool) interface{} {
 		nil, // StringData, never returned over API
 		secret.Type,
 >>>>>>> 410c7ca... Filter resources before returning to the client
+=======
+>>>>>>> 36ee2da... Filter metadata before returning resource to the client
 	}
 }
