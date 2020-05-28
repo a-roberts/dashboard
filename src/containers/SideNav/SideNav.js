@@ -228,41 +228,6 @@ class SideNav extends Component {
           >
             &nbsp;
           </SideNavMenuItem>
-<<<<<<< HEAD
-          <SideNavLink element={NavLink} icon={<span />} to={urls.about()}>
-            {intl.formatMessage({
-              id: 'dashboard.sideNav.about',
-              defaultMessage: 'About'
-            })}
-          </SideNavLink>
-          <SideNavLink
-            element={NavLink}
-            icon={<span />}
-            to={urls.importResources()}
-          >
-            {intl.formatMessage({
-              id: 'dashboard.sideNav.importResources',
-              defaultMessage: 'Import Tekton resources'
-            })}
-          </SideNavLink>
-          <SideNavLink
-            element={NavLink}
-            icon={<span />}
-            to={urls.secrets.all()}
-          >
-            Secrets
-          </SideNavLink>
-          <SideNavLink
-            element={NavLink}
-            icon={<span />}
-            to={this.getPath(urls.serviceAccounts.all())}
-          >
-            ServiceAccounts
-          </SideNavLink>
-          <>
-            {extensions.length > 0 &&
-              extensions.map(
-=======
 
           {!this.props.isReadOnly && (
             <SideNavMenu
@@ -298,7 +263,6 @@ class SideNav extends Component {
               })}
             >
               {extensions.map(
->>>>>>> 410c7ca... Filter resources before returning to the client
                 ({
                   displayName,
                   name,

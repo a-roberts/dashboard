@@ -2,20 +2,9 @@ package kubernetes
 
 import (
 	"github.com/tektoncd/dashboard/pkg/broadcaster"
-<<<<<<< HEAD
-<<<<<<< HEAD
-	"github.com/tektoncd/dashboard/pkg/endpoints"
-	logging "github.com/tektoncd/dashboard/pkg/logging"
-	v1 "k8s.io/api/core/v1"
-=======
-	"github.com/tektoncd/dashboard/pkg/controllers/utils"
-	"github.com/tektoncd/dashboard/pkg/logging"
->>>>>>> ddd6c4f... Refactor controllers to reduce code duplication
-=======
 	controllerUtils "github.com/tektoncd/dashboard/pkg/controllers/utils"
 	"github.com/tektoncd/dashboard/pkg/logging"
 	"github.com/tektoncd/dashboard/pkg/utils"
->>>>>>> 410c7ca... Filter resources before returning to the client
 	k8sinformer "k8s.io/client-go/informers"
 )
 
@@ -23,46 +12,6 @@ import (
 // create, update and delete events for secrets
 func NewSecretController(sharedK8sInformerFactory k8sinformer.SharedInformerFactory) {
 	logging.Log.Debug("In NewSecretController")
-<<<<<<< HEAD
-	k8sInformer := sharedK8sInformerFactory.Core().V1().Secrets()
-	k8sInformer.Informer().AddEventHandler(cache.ResourceEventHandlerFuncs{
-		AddFunc:    secretCreated,
-		UpdateFunc: secretUpdated,
-		DeleteFunc: secretDeleted,
-	})
-}
-
-func secretCreated(obj interface{}) {
-	logging.Log.Debugf("Secret Controller detected secret '%s' created", obj.(*v1.Secret).Name)
-	data := broadcaster.SocketData{
-		MessageType: broadcaster.SecretCreated,
-		Payload:     obj,
-	}
-
-	endpoints.ResourcesChannel <- data
-}
-
-func secretUpdated(oldObj, newObj interface{}) {
-	oldSecret, newSecret := oldObj.(*v1.Secret), newObj.(*v1.Secret)
-	// If resourceVersion differs between old and new, an actual update event was observed
-	if oldSecret.ResourceVersion != newSecret.ResourceVersion {
-		logging.Log.Debugf("Secret Controller detected secret '%s' updated", oldSecret.Name)
-		data := broadcaster.SocketData{
-			MessageType: broadcaster.SecretUpdated,
-			Payload:     newObj,
-		}
-		endpoints.ResourcesChannel <- data
-	}
-}
-
-func secretDeleted(obj interface{}) {
-	logging.Log.Debugf("Secret Controller detected secret '%s' deleted", obj.(*v1.Secret).Name)
-	data := broadcaster.SocketData{
-		MessageType: broadcaster.SecretDeleted,
-		Payload:     obj,
-	}
-=======
->>>>>>> ddd6c4f... Refactor controllers to reduce code duplication
 
 	controllerUtils.NewController(
 		"secret",

@@ -1,5 +1,5 @@
 /*
-Copyright 2019 The Tekton Authors
+Copyright 2019-2020 The Tekton Authors
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
 You may obtain a copy of the License at
@@ -22,35 +22,6 @@ type MessageType string
 
 // Reference outside of package
 const (
-<<<<<<< HEAD
-	Log                     messageType = "Log"
-	NamespaceCreated        messageType = "NamespaceCreated"
-	NamespaceDeleted        messageType = "NamespaceDeleted"
-	PipelineCreated         messageType = "PipelineCreated"
-	PipelineDeleted         messageType = "PipelineDeleted"
-	PipelineUpdated         messageType = "PipelineUpdated"
-	ClusterTaskCreated      messageType = "ClusterTaskCreated"
-	ClusterTaskDeleted      messageType = "ClusterTaskDeleted"
-	ClusterTaskUpdated      messageType = "ClusterTaskUpdated"
-	TaskCreated             messageType = "TaskCreated"
-	TaskDeleted             messageType = "TaskDeleted"
-	TaskUpdated             messageType = "TaskUpdated"
-	PipelineResourceCreated messageType = "PipelineResourceCreated"
-	PipelineResourceDeleted messageType = "PipelineResourceDeleted"
-	PipelineResourceUpdated messageType = "PipelineResourceUpdated"
-	PipelineRunCreated      messageType = "PipelineRunCreated"
-	PipelineRunDeleted      messageType = "PipelineRunDeleted"
-	PipelineRunUpdated      messageType = "PipelineRunUpdated"
-	TaskRunCreated          messageType = "TaskRunCreated"
-	TaskRunDeleted          messageType = "TaskRunDeleted"
-	TaskRunUpdated          messageType = "TaskRunUpdated"
-	ExtensionCreated        messageType = "ExtensionCreated"
-	ExtensionUpdated        messageType = "ExtensionUpdated"
-	ExtensionDeleted        messageType = "ExtensionDeleted"
-	SecretCreated           messageType = "SecretCreated"
-	SecretDeleted           messageType = "SecretDeleted"
-	SecretUpdated           messageType = "SecretUpdated"
-=======
 	Log                     MessageType = "Log"
 	NamespaceCreated        MessageType = "NamespaceCreated"
 	NamespaceUpdated        MessageType = "NamespaceUpdated"
@@ -82,7 +53,6 @@ const (
 	ServiceAccountCreated   MessageType = "ServiceAccountCreated"
 	ServiceAccountDeleted   MessageType = "ServiceAccountDeleted"
 	ServiceAccountUpdated   MessageType = "ServiceAccountUpdated"
->>>>>>> ddd6c4f... Refactor controllers to reduce code duplication
 )
 
 type SocketData struct {

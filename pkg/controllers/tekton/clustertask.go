@@ -15,11 +15,7 @@ package tekton
 
 import (
 	"github.com/tektoncd/dashboard/pkg/broadcaster"
-<<<<<<< HEAD
-	"github.com/tektoncd/dashboard/pkg/endpoints"
-=======
 	"github.com/tektoncd/dashboard/pkg/controllers/utils"
->>>>>>> ddd6c4f... Refactor controllers to reduce code duplication
 	logging "github.com/tektoncd/dashboard/pkg/logging"
 	tektoninformer "github.com/tektoncd/pipeline/pkg/client/informers/externalversions"
 )
@@ -29,15 +25,6 @@ import (
 func NewClusterTaskController(sharedTektonInformerFactory tektoninformer.SharedInformerFactory) {
 	logging.Log.Debug("In NewClusterTaskController")
 
-<<<<<<< HEAD
-func clusterTaskDeleted(obj interface{}) {
-	logging.Log.Debugf("Cluster Task Controller detected clusterTask '%s' deleted", obj.(*v1alpha1.ClusterTask).Name)
-	data := broadcaster.SocketData{
-		MessageType: broadcaster.ClusterTaskDeleted,
-		Payload:     obj,
-	}
-	endpoints.ResourcesChannel <- data
-=======
 	utils.NewController(
 		"cluster task",
 		sharedTektonInformerFactory.Tekton().V1alpha1().ClusterTasks().Informer(),
@@ -46,5 +33,4 @@ func clusterTaskDeleted(obj interface{}) {
 		broadcaster.ClusterTaskDeleted,
 		nil,
 	)
->>>>>>> ddd6c4f... Refactor controllers to reduce code duplication
 }

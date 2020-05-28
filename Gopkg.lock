@@ -111,6 +111,22 @@
   version = "v0.3.1"
 
 [[projects]]
+  digest = "1:95f69b444fef3831474cae7338a63f62c58de90bc73e6b1542aa9a911e35de56"
+  name = "github.com/gorilla/csrf"
+  packages = ["."]
+  pruneopts = "UT"
+  revision = "79c60d0e4fcf1fbc9653c1cb13d28e82248cf43c"
+  version = "v1.7.0"
+
+[[projects]]
+  digest = "1:e72d1ebb8d395cf9f346fd9cbc652e5ae222dd85e0ac842dc57f175abed6d195"
+  name = "github.com/gorilla/securecookie"
+  packages = ["."]
+  pruneopts = "UT"
+  revision = "e59506cc896acb7f7bf732d4fdf5e25f7ccd8983"
+  version = "v1.1.1"
+
+[[projects]]
   digest = "1:7b5c6e2eeaa9ae5907c391a91c132abfd5c9e8a784a341b5625e750c67e6825d"
   name = "github.com/gorilla/websocket"
   packages = ["."]
@@ -752,6 +768,7 @@
   input-imports = [
     "github.com/emicklei/go-restful",
     "github.com/google/go-cmp/cmp",
+    "github.com/gorilla/csrf",
     "github.com/gorilla/websocket",
     "github.com/openshift/client-go/route/clientset/versioned",
     "github.com/tektoncd/pipeline/pkg/apis/pipeline/v1alpha1",
@@ -765,6 +782,7 @@
     "go.uber.org/zap",
     "k8s.io/api/core/v1",
     "k8s.io/api/extensions/v1beta1",
+    "k8s.io/apimachinery/pkg/api/meta",
     "k8s.io/apimachinery/pkg/apis/meta/v1",
     "k8s.io/apimachinery/pkg/types",
     "k8s.io/client-go/informers",

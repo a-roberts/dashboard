@@ -23,6 +23,7 @@ import (
 	"strings"
 
 	restful "github.com/emicklei/go-restful"
+	"github.com/gorilla/csrf"
 	"github.com/tektoncd/dashboard/pkg/logging"
 	"github.com/tektoncd/dashboard/pkg/utils"
 	corev1 "k8s.io/api/core/v1"
@@ -159,8 +160,6 @@ func (r Resource) GetProperties(request *restful.Request, response *restful.Resp
 
 	response.WriteEntity(properties)
 }
-<<<<<<< HEAD
-=======
 
 func (r Resource) GetToken(request *restful.Request, response *restful.Response) {
 	response.Header().Add("X-CSRF-Token", csrf.Token(request.Request))
@@ -227,4 +226,3 @@ func handleSecretsResponse(response *restful.Response, forwardResponse rest.Resu
 	response.Header().Add("Content-Type", restful.MIME_JSON)
 	response.WriteHeaderAndEntity(*statusCode, responseObject)
 }
->>>>>>> 410c7ca... Filter resources before returning to the client

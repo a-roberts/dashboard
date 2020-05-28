@@ -5,7 +5,6 @@ import (
 	"github.com/tektoncd/dashboard/pkg/endpoints"
 	"github.com/tektoncd/dashboard/pkg/logging"
 	"github.com/tektoncd/dashboard/pkg/router"
-	"github.com/tektoncd/dashboard/pkg/utils"
 	v1 "k8s.io/api/core/v1"
 	k8sinformer "k8s.io/client-go/informers"
 	"k8s.io/client-go/tools/cache"
