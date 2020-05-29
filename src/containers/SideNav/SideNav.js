@@ -228,41 +228,39 @@ class SideNav extends Component {
           >
             &nbsp;
           </SideNavMenuItem>
-
-          {!this.props.isReadOnly && (
-            <SideNavMenu
-              defaultExpanded
-              title={intl.formatMessage({
-                id: 'dashboard.sideNav.kubernetesResources',
-                defaultMessage: 'Kubernetes resources'
-              })}
-            >
-              <SideNavMenuItem
-                element={NavLink}
-                icon={<span />}
-                to={this.getPath(urls.secrets.all())}
-              >
-                Secrets
-              </SideNavMenuItem>
-              <SideNavMenuItem
-                element={NavLink}
-                icon={<span />}
-                to={this.getPath(urls.serviceAccounts.all())}
-              >
-                ServiceAccounts
-              </SideNavMenuItem>
-            </SideNavMenu>
-          )}
-
-          {extensions.length > 0 && (
-            <SideNavMenu
-              defaultExpanded
-              title={intl.formatMessage({
-                id: 'dashboard.extensions.title',
-                defaultMessage: 'Extensions'
-              })}
-            >
-              {extensions.map(
+          <SideNavLink element={NavLink} icon={<span />} to={urls.about()}>
+            {intl.formatMessage({
+              id: 'dashboard.sideNav.about',
+              defaultMessage: 'About'
+            })}
+          </SideNavLink>
+          <SideNavLink
+            element={NavLink}
+            icon={<span />}
+            to={urls.importResources()}
+          >
+            {intl.formatMessage({
+              id: 'dashboard.sideNav.importResources',
+              defaultMessage: 'Import Tekton resources'
+            })}
+          </SideNavLink>
+          <SideNavLink
+            element={NavLink}
+            icon={<span />}
+            to={urls.secrets.all()}
+          >
+            Secrets
+          </SideNavLink>
+          <SideNavLink
+            element={NavLink}
+            icon={<span />}
+            to={this.getPath(urls.serviceAccounts.all())}
+          >
+            ServiceAccounts
+          </SideNavLink>
+          <>
+            {extensions.length > 0 &&
+              extensions.map(
                 ({
                   displayName,
                   name,
